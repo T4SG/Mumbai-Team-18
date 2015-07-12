@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from demo.flatlogic.com/3.1/white/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jul 2015 10:01:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title></title>
+
+        <link href="css/application.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+	
+	    <script>
+        function get_delayed_project()
+         {
+        $.post( "get_delayed_project.php", function( data ) {
+        $( "#get_delayed" ).html( data );
+        });
+     }
+     get_delayed_project();
+    </script>
+	
+	
+	
+    <script>
+    $(document).ready(function(){
+        $.ajax({ url: 'get_users.php',
+         type: 'post',
+         success: function(array) {
+                      //alert(typeof array);
+                      /*var obj=JSON.parse(array);
+                      for(int i=0;i<obj.length.i++)
+                      {
+                      $('ol#users li').append(function(index)
+                        {
+                            $(this).text(array[i]);
+                        });
+                        }*/
+                  }
+        });
+        });
+    </script>
+</head>
+<body class="background-dark">
+    <div class="logo">
+        <h4><a href="index-2.html">HappyHeartsFund</strong></a></h4>
+    </div>
+        <nav id="sidebar" class="sidebar nav-collapse collapse">
+            <ul id="side-nav" class="side-nav">
+            <li class="panel ">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="#stats-collapse" aria-expanded="false"><i class="fa fa-area-chart"></i> <span class="name">Projects</span></a>
+                    <ul id="stats-collapse" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                        <li class=""><a href="inprogress.html">In Progress</a></li>
+                        <li class=""><a href="completed_projects.html">Completed</a></li>
+                        <li class=""><a href="stat_realtime.html">Delayed</a></li>
+                    </ul>
+                </li>
+                
+                <li class="panel ">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="#forms-collapse" aria-expanded="false"><i class="fa fa-pencil"></i> <span class="name">Resources</span></a>
+                    <ul id="forms-collapse" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                        <li class=""><a href="resources_donor.html">Donors</a></li>
+                        <li class=""><a href="form_article.html">Others</a></li>
+                        
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="admin_user.html"><i class="fa fa-home"></i> <span class="name">Users</span></a>
+                </li>
+                
+                <li class="active">
+                    <a href="documents.html"><i class="fa fa-home"></i> <span class="name">Documents</span></a>
+                </li>
+                
+                <li class="active">
+                    <a href="partners.html"><i class="fa fa-home"></i> <span class="name">Partners</span></a>
+                </li>
+                
+            </ul>
+        </nav>    <div class="wrap">
+        <header class="page-header">
+            <div class="navbar">
+                <ul class="nav navbar-nav navbar-right pull-right">
+                    <li class="visible-phone-landscape">
+                        <a href="#" id="search-toggle">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="hidden-xs">
+                        <a href="#" id="settings"
+                           title="Settings"
+                           data-toggle="popover"
+                           data-placement="bottom">
+                            <i class="fa fa-cog"></i>
+                        </a>
+                    </li>
+                    <li class="hidden-xs dropdown">
+                        <a href="#" title="Account" id="account"
+                           class="dropdown-toggle"
+                           data-toggle="dropdown">
+                            <i class="fa fa-user"></i>
+                        </a>
+                        <ul id="account-menu" class="dropdown-menu account" role="menu">
+                            <li role="presentation" class="account-picture">
+                                <img src="img/2.jpg" alt="">
+                                Philip Daineka
+                            </li>
+                            <li role="presentation">
+                                <a href="form_account.html" class="link">
+                                    <i class="fa fa-user"></i>
+                                    Profile
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="component_calendar.html" class="link">
+                                    <i class="fa fa-calendar"></i>
+                                    Calendar
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="link">
+                                    <i class="fa fa-inbox"></i>
+                                    Inbox
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="visible-xs">
+                        <a href="#"
+                           class="btn-navbar"
+                           data-toggle="collapse"
+                           data-target=".sidebar"
+                           title="">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+                    <li class="hidden-xs"><a href="login.html"><i class="fa fa-sign-out"></i></a></li>
+                </ul>
+            </div>
+        </header>       
+         <div class="content container">
+        <h2 class="page-title">Delayed Projects</h2>
+        <div class="col-md-10">
+                <h4>Closest stars</h4>
+				<div id="get_delayed"></div>
+
+				 
+<br>
+            </div>
+            <div class="col-xs-4">
+                                    <button type="button" class="btn btn-success btn-lg" data-placement="top" data-original-title=".btn .btn-success .btn-lg">
+                                        Add User
+                                    </button>
+            </div>
+            <div class="col-xs-4">
+                                    <button type="button" class="btn btn-danger btn-lg" data-placement="top" data-original-title=".btn .btn-danger .btn-lg">
+                                        Remove User
+                                    </button>
+            </div>
+            <div class="col-xs-4">
+                                    <button type="button" class="btn btn-warning btn-lg" data-placement="top" data-original-title=".btn .btn-warning .btn-lg">
+                                        Update User
+                                    </button>
+            </div>
+        </div>
+        <div class="loader-wrap hiding hide">
+            <i class="fa fa-circle-o-notch fa-spin"></i>
+        </div>
+    </div>
+<!-- common libraries. required for every page-->
+<script src="lib/jquery/dist/jquery.min.js"></script>
+<script src="lib/jquery-pjax/jquery.pjax.js"></script>
+<script src="lib/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+<script src="lib/widgster/widgster.js"></script>
+<script src="lib/underscore/underscore.js"></script>
+
+<!-- common application js -->
+<script src="js/app.js"></script>
+<script src="js/settings.js"></script>
+
+<!-- common templates -->
+<script type="text/template" id="settings-template">
+    <div class="setting clearfix">
+        <div>Background</div>
+        <div id="background-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
+            <% dark = background == 'dark'; light = background == 'light';%>
+            <button type="button" data-value="dark" class="btn btn-sm btn-default <%= dark? 'active' : '' %>">Dark</button>
+            <button type="button" data-value="light" class="btn btn-sm btn-default <%= light? 'active' : '' %>">Light</button>
+        </div>
+    </div>
+    <div class="setting clearfix">
+        <div>Sidebar on the</div>
+        <div id="sidebar-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
+            <% onRight = sidebar == 'right'%>
+            <button type="button" data-value="left" class="btn btn-sm btn-default <%= onRight? '' : 'active' %>">Left</button>
+            <button type="button" data-value="right" class="btn btn-sm btn-default <%= onRight? 'active' : '' %>">Right</button>
+        </div>
+    </div>
+    <div class="setting clearfix">
+        <div>Sidebar</div>
+        <div id="display-sidebar-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
+            <% display = displaySidebar%>
+            <button type="button" data-value="true" class="btn btn-sm btn-default <%= display? 'active' : '' %>">Show</button>
+            <button type="button" data-value="false" class="btn btn-sm btn-default <%= display? '' : 'active' %>">Hide</button>
+        </div>
+    </div>
+    <div class="setting clearfix">
+        <div>White Version</div>
+        <div>
+            <a href="../transparent/index.html" class="btn btn-sm btn-default">&nbsp; Switch &nbsp;   <i class="fa fa-angle-right"></i></a>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="sidebar-settings-template">
+    <% auto = sidebarState == 'auto'%>
+    <% if (auto) {%>
+    <button type="button"
+            data-value="icons"
+            class="btn-icons btn btn-transparent btn-sm">Icons</button>
+    <button type="button"
+            data-value="auto"
+            class="btn-auto btn btn-transparent btn-sm">Auto</button>
+    <%} else {%>
+    <button type="button"
+            data-value="auto"
+            class="btn btn-transparent btn-sm">Auto</button>
+    <% } %>
+</script>
+
+    <!-- page specific scripts -->
+        <!-- page libs -->
+        <script src="lib/slimScroll/jquery.slimscroll.min.js"></script>
+        <script src="lib/jquery.sparkline/index.js"></script>
+
+        <script src="lib/backbone/backbone.js"></script>
+        <script src="lib/backbone.localStorage/backbone.localStorage-min.js"></script>
+
+        <script src="lib/d3/d3.min.js"></script>
+        <script src="lib/nvd3/nv.d3.min.js"></script>
+
+        <!-- page application js -->
+        <script src="js/index.js"></script>
+        <script src="js/chat.js"></script>
+
+        <!-- page template -->
+        <script type="text/template" id="message-template">
+            <div class="sender pull-left">
+                <div class="icon">
+                    <img src="img/2.jpg" class="img-circle" alt="">
+                </div>
+                <div class="time">
+                    just now
+                </div>
+            </div>
+            <div class="chat-message-body">
+                <span class="arrow"></span>
+                <div class="sender"><a href="#">Tikhon Laninga</a></div>
+                <div class="text">
+                    <%- text %>
+                </div>
+            </div>
+        </script>
+
+</body>
+
+<!-- Mirrored from demo.flatlogic.com/3.1/white/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jul 2015 10:02:57 GMT -->
+</html>
